@@ -1,8 +1,11 @@
 import javax.swing.JFrame;
 import java.awt.GraphicsConfiguration;
 
-public class GameFrame {
+public class GameFrame extends JFrame{
+	
+	private GameLoop game;
 	static GraphicsConfiguration gc;
+	
 	public static void main(String[] args){
 		JFrame frame= new JFrame(gc);
 		frame.setTitle("Feu de forêt");
