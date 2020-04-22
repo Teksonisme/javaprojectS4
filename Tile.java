@@ -1,27 +1,33 @@
 package Grid_game;
 
-import java.awt.Graphics;
-import java.awt.Button;
+import javax.swing.JButton;
 import java.awt.Color;
-import java.awt.Component;
-import java.util.Random;
 
-public abstract class Tile extends Button{
-	static Color c;
+public abstract class Tile extends JButton {
+	Color c;
 	Main_of_game game;
-	boolean enFeu;
-	
-	Tile(){
-		this.c=Color.white;
-		this.setBackground(this.c);
+	String etat;
+	int x,y;
+	//Constructeur tile type : TerrainVide
+	Tile(int x,int y) {
+		this.c = new Color(255,255,255); this.setBackground(this.c);
+		this.x=x; this.y=y;
 	}
-	Tile(Color c){
-		this.c = c;
-		this.setBackground(c);
+	//Constructeur tile type : Arbre,Pompier
+	Tile(Color c,int x,int y) {
+		this.c = c; this.setBackground(c);
+		this.x=x; this.y=y;
 	}
+	//Set color of object & new background color
 	public void setColor(Color c) {
-		this.c = c;
-		this.setBackground(c);
+		this.c = c; this.setBackground(c);
 	}
+	
+	//abstract methods
 	public abstract void prendFeu();
+	public abstract String getEtat();
+	public abstract int getHealthRes();
+	public abstract void setHealthRes(int h);
+	public abstract int getHealthFeu();
+	public abstract TypeArbre getType();
 }

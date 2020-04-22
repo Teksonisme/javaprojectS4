@@ -1,31 +1,28 @@
 package Grid_game;
-import java.awt.Color;
-
-import javax.swing.JFrame;
-
-import java.awt.Graphics;
-
-import java.awt.GraphicsConfiguration;
 
 public class Main_of_game {
-	
-	Frame_of_game frame;
+
 	GridLayout_game gl_g;
-	
+	GameManager gm;
+	public Tile[][] map;
+
 	public Main_of_game(int h,int w) {
-		//this.frame = new Frame_of_game(h,w,this);
 		this.gl_g = new GridLayout_game(h,w,this);
 	}
-	/**public void run(){
+	public void run(int w,int h){
 		while(true){
-			try{Thread.sleep(5000);{}
-			this.frame.repaint();
-		}
-	}*/
+			try{Thread.sleep(500);{}}
+			catch(InterruptedException e) {}
+			//this.map = Main_of_game.updateMap(this.map);
+			gl_g.gm.updateMap();
+		}	
+	}
+
 	public static void main(String[] args) {
-		System.out.println("Hello");
+		System.out.println("Working Directory = " + System.getProperty("user.dir"));
 		Main_of_game game = new Main_of_game(960,1280);
-		//game.run();
+		System.out.println("Game launched !");
+		game.run(960,1280);
 	}
 
 }

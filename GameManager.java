@@ -1,19 +1,20 @@
 package Grid_game;
 
 public class GameManager {
-	
-	TileGrid map;
-	GameManager(){
+
+	GameManager() {
 		this.initGame();
 	}
+
 	public void initGame() {
-		map.generateMap();
-		int randCol =(int)(Math.random()*((39 - 0) + 1)), randLigne= (int)(Math.random()*((29 - 0) + 1));
-		
+		TileGrid.generateMap();
 	}
-	public Tile[][] getMap(){
-		return this.map.getMap();
+
+	public Tile[][] getMap() {
+		return TileGrid.getMap();
 	}
-	/**public updateMap() {
-	}*/
+
+	public void updateMap() {
+		TileGrid.updateMap();
+	}
 }
