@@ -29,5 +29,9 @@ public abstract class Tile extends JButton {
 	public abstract int getHealthRes();
 	public abstract void setHealthRes(int h);
 	public abstract int getHealthFeu();
+	public abstract void setHealthFeu(int h);
+	public abstract int getHealth();
+	public abstract void setHealth(int h);
 	public abstract TypeArbre getType();
+	public abstract void mort();
 }

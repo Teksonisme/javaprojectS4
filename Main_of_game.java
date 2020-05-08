@@ -15,6 +15,7 @@ public class Main_of_game {
 			catch(InterruptedException e) {}
 			//this.map = Main_of_game.updateMap(this.map);
 			gl_g.gm.updateMap();
+			gl_g.gm.burning();
 		}	
 	}
 
@@ -24,5 +25,4 @@ public class Main_of_game {
 		System.out.println("Game launched !");
 		game.run(960,1280);
 	}
-
 }

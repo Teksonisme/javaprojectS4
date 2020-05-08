@@ -10,7 +10,7 @@ public class Constantes {
 	// 
 	static int resChataigner=1,resChene=2,resFrene=3;
 	//
-	static int perteVie = 5;
+	static int perteVieRes = 5,perteVieArbre=1;
 	static Color couleurFeu = new Color(255,69,0);
 	public static int iPompierGenerate=0,jPompierGenerate=0;
 

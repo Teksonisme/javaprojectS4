@@ -3,7 +3,7 @@ package Grid_game;
 public class TerrainVide extends Tile {
 	String etat;
 	int healthFeu;
-
+	
 	TerrainVide(int x,int y) {
 		super(x,y);
 		this.etat = "base";
@@ -24,12 +24,20 @@ public class TerrainVide extends Tile {
 	public int getHealthRes() {
 		return 0;
 	}
-
+	public void setHealthFeu(int h) {
+		this.healthFeu -= h;
+	}
 	public int getHealthFeu() {
 		return this.healthFeu;
 	}
-
+	public void setHealth(int h) {
+		this.healthFeu -= h;
+	}
+	public int getHealth() {
+		return 0;
+	}
 	public TypeArbre getType() {
 		return TypeArbre.UNDEFINED;
 	}
+	public void mort() {}
 }

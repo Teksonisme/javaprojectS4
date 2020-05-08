@@ -17,4 +17,7 @@ public class GameManager {
 	public void updateMap() {
 		TileGrid.updateMap();
 	}
+	public void burning() {
+		TileGrid.burning();
+	}
 }

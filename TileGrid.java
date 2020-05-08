@@ -51,19 +51,27 @@ public class TileGrid {
 	public static void updateMap() {
 		for (int i = 0; i < map.length; i++) {
 			for (int j = 0; j < map[i].length; j++) {
-				if (neighbourOrSelfOnFire(i, j)) {
+				if (neighbourOrSelfOnFire(i, j) && map[i][j].getEtat() != "mort") {
 					if (map[i][j].getHealthRes() == 0) {
 						map[i][j].prendFeu();
 					} else {
-						map[i][j].setHealthRes(Constantes.perteVie);
+						map[i][j].setHealthRes(Constantes.perteVieRes);
 					}
 				}
-
 			}
 		}
 	}
-	public void extinguishFire() {
-		
+	public static void burning() {
+		for (int i = 0; i < map.length; i++) {
+			for (int j = 0; j < map[i].length; j++) {
+				if(map[i][j].getEtat().equals("feu")) {
+					map[i][j].setHealth(Constantes.perteVieArbre);
+				}
+				if(map[i][j].getHealth() == 0) {
+					map[i][j].mort();
+				}
+			}
+		}
 	}
 	public static boolean neighbourOrSelfOnFire(int i, int j) {
 		if (i == 0) {
